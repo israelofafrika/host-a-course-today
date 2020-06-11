@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <!-- bootstrap css -->
+ <link rel="stylesheet" href="./css/bootstrap.min.css">
+ <!-- main css -->
+ <link rel="stylesheet" href="./css/main.css">
+ <!-- google fonts -->
+ <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
+ <!-- font awesome -->
+ <link rel="stylesheet" href="./css/all.css">
+ <title>Open source MOOC</title>
+ <style>
+ </style>
+</head>
+
+<body>
+ <div class="container">
+  <div class="row">
+   <div class="col-11 mx-auto text-center my-5">
+    <form class="my-5" id="customer-form">
+     <h3 class="text-capitalize">Welcome,Host a course free!</h3>
+     
+     <div class="feedback text-center alert  text-capitalize p-1">
+      
+     </div> 
+
+     <button id ="myBtn" type="buttion" class="btn btn-block submitBtn text-uppercase mt-4" id = "submitBtn" onclick="javascript: return false;"> + ADD A COURSE</button>
+
+
+
+     <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+         <!-- DROP MODAL CONTENT HERE  -->
+              <!-- single -->
+              <div class="input-group my-3">
+                <div class="input-group-prepend">
+                 <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control text-capitalize name" id="name" placeholder="Facilitator Name ">
+               </div>
+               <!-- end of single input -->
+               <!-- single input -->
+               <div class="input-group my-3">
+                <div class="input-group-prepend">
+                 <span class="input-group-text"><i class="fas fa-book"></i></span>
+                </div>
+                <input type="text" class="form-control text-capitalize course" placeholder="course" id="course">
+               </div>
+               <!-- end of single input -->
+               <!-- single input -->
+               <div class="input-group my-3">
+                <div class="input-group-prepend">
+                 <span class="input-group-text"><i class="fas fa-user-circle"></i></span>
+                </div>
+                <input type="text" class="form-control text-capitalize author" placeholder="Add decription (Max. 150 characters)" id="author">
+               </div>
+               <!-- end of single input -->
+               <button type="button" class="btn btn-block submitBtn thisButton text-uppercase mt-4"> + ADD </button>
+              </form>
+        </div>
+      
+      </div>
+
+     <!-- single input -->
+     
+
+    <div class="loading">
+     <img src="./img/Facebook-1s-200px.gif" alt=undefined>
+    </div>
+    <div class="row customer-list">
+
+    </div>
+
+    </div>
+   </div>
+  </div>
+ </div>
+
+
+
+
+ <!-- jquery -->
+ <script src="./js/jquery-3.3.1.min.js"></script>
+ <!-- bootstrap js -->
+ <script src="./js/bootstrap.bundle.min.js"></script>
+ <!-- script js -->
+ <script src="./js/app.js"></script>
+</body>
+
+</html>
+

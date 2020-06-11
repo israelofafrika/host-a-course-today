@@ -1,0 +1,126 @@
+:root {
+  --mainWhite: #f7f9f9;
+  --mainBrown: #3fa5b8;
+  --darkBrown: #0d4744;
+}
+body {
+  background: var(--mainWhite);
+}
+.input-group-text {
+  background: var(--mainBrown);
+  color: var(--mainWhite);
+  border-color: var(--mainBrown);
+}
+.form-control {
+  border: 0.2rem solid var(--mainBrown);
+}
+.submitBtn {
+  color: var(--darkBrown);
+  background: var(--mainWhite);
+  border: 0.2rem solid var(--darkBrown);
+  transition: all 1s ease-in-out;
+}
+.submitBtn:hover {
+  background: var(--darkBrown);
+  color: var(--mainWhite);
+}
+.fail {
+  border-color: rgb(43, 167, 160);
+}
+.complete {
+  border-color: rgb(94, 163, 143);
+}
+.feedback {
+  display: none;
+}
+.loading {
+  display: none;
+}
+:disabled {
+  opacity: 0.2 !important;
+}
+.showItem {
+  display: block;
+}
+
+
+
+/*WE PUT CSS FOR THE FEEDBACK CSS HERE*/
+
+element.style {
+  display: none;
+}
+
+.text-capitalize {
+  text-transform: capitalize!important;
+}
+
+.text-center {
+  text-align: center!important;
+}
+
+.p-1 {
+  padding: .25rem!important;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;}
+
+.showItem {
+    display: block;
+}
+
+/*END OF CSS FOR FEEDACK WARNING */
+
+/*WE PUT CSS FOR THE MODAL HERE*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.remove{
+  display: block;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*END OF CSS FOR FEEBACK WARNING */
