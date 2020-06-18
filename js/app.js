@@ -4,7 +4,10 @@ const author = document.getElementById("author")
 const submitBtn = document.querySelector(".thisButton")
 const loader = document.querySelector(".loading")
 const warningMsg = document.querySelector('.feedback')
+const cardContainer = document.querySelector(".customer-list")
 
+
+let dynamics = [];
 
 let index =  0
 
@@ -42,16 +45,14 @@ const fetchCourse = ()=>{
 }
 
 const fetchAuthor = ()=>{
-    value =author.value
-    return value }
+    return author.value
+     }
 
 
 
 const submitFn = ()=>{
 
-    // console.log(fetchAuthor())
-    // console.log(fetchCourse())
-    // console.log(fetchCustName())
+    
     if (fetchCustName() ==""|| fetchCourse()== "" || fetchAuthor() == ""){
     validate()
     setTimeout(()=>{alert("ERROR; All fields must be filled. Please Refresh")},900)
@@ -71,13 +72,14 @@ const submitFn = ()=>{
     }, 500);
 
     // alert user 
-    setTimeout(alert("Description cannot exceed 75 characters"), 600)
+    setTimeout(alert("Description cannot exceed 159 characters"), 600)
       
 
 
     }
 
     else {
+        let dynamic;
         //show loader
         const loaderFn= ()=>{
             loader.style.display = "block"
@@ -91,24 +93,50 @@ const submitFn = ()=>{
         }, 300);
 
         //build the card 
-        setTimeout( ()=>{
-            const cardContainer = document.querySelector(".customer-list")
-         cardContainer.insertAdjacentHTML("afterbegin",`<div class="col-11 mx-auto col-md-6 my-3 col-lg-4"><div class="card text-left">
-         <img src="${fetchImage()}" class="card-img-top" alt=undefined>
-         <div class="card-body">
-            <h6 class="text-capitalize "><span class="badge badge-warning mr-2">Facilitator :</span><span id="customer-name">${fetchCustName()}</span></h6>
-            <h6 class="text-capitalize my-3"><span class="badge badge-success mr-2">Course :</span><span id="customer-course">${fetchCourse()}</span></h6>
-            <h6 class="text-capitalize"><span class="badge badge-danger mr-2">Description :</span><span id="course-author">${fetchAuthor()}</span></h6>
-         </div>
-        </div>
-     </div>`)}, 200);
-
+        ( ()=>{
+            dynamic = `<div class="col-11 mx-auto col-md-6 my-3 col-lg-4"><div class="card text-left">
+            <img src="${fetchImage()}" class="card-img-top" alt=undefined>
+            <div class="card-body">
+               <h6 class="text-capitalize "><span class="badge badge-warning mr-2">Facilitator :</span><span id="customer-name">${fetchCustName()}</span></h6>
+               <h6 class="text-capitalize my-3"><span class="badge badge-success mr-2">Course :</span><span id="customer-course">${fetchCourse()}</span></h6>
+               <h6 class="text-capitalize"><span class="badge badge-danger mr-2">Description :</span><span id="course-author">${fetchAuthor()}</span></h6>
+            </div>
+           </div>
+        </div>`
+            
+        cardContainer.insertAdjacentHTML("afterbegin",dynamic)
+        dynamics.push(dynamic)
+         //console.log(dynamics)
+        })()
         
 
-        } 
 
+    
+        if(localStorage.getItem("log")===null){
+            localStorage.setItem("log", JSON.stringify(dynamics))
+        }
+        else {
+            let relog = JSON.parse(localStorage.getItem("log"))
+            relog.push(dynamic)
+            localStorage.setItem("log", JSON.stringify(relog))
+            console.log(relog)
+        }
 
+    }             
 }
+
+window.onload = ()=>{
+    if(localStorage.getItem("log")!==null){
+    dynamics= JSON.parse(localStorage.getItem("log"))
+    console.log(dynamics)
+    dynamics.forEach((card)=>{
+        cardContainer.insertAdjacentHTML("afterbegin",CAR)
+
+    })
+        }
+}
+
+
 
 // BLOCK OF CODE FOR FEEDBACK WARNING//////
 function validate (){
