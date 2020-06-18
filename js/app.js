@@ -130,7 +130,7 @@ window.onload = ()=>{
     dynamics= JSON.parse(localStorage.getItem("log"))
     console.log(dynamics)
     dynamics.forEach((card)=>{
-        cardContainer.insertAdjacentHTML("afterbegin",CAR)
+        cardContainer.insertAdjacentHTML("afterbegin",card)
 
     })
         }
